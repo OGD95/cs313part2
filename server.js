@@ -34,7 +34,7 @@ function getAccount(req, res) {
 function getAccountFromDB(accountId, callback){
     console.log("getPersonFromDB called with accountId: ", accountId);
 
-    var sql = "SELECT * FROM account WHERE accountId = $1::int";
+    var sql = "SELECT * FROM account WHERE accountid = $1::int";
     var params = [accountId];
 
     pool.query(sql, params, function(err, result){
