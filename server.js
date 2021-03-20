@@ -15,7 +15,7 @@ app.get("/", function(req, res){
 app.get("/createEvent", function(req, res){
     res.sendFile('views/pages/createEvent.html', { root: __dirname});
 });
-app.get("/eventSuccesfullyCreated", createEvent);
+app.post("/eventSuccesfullyCreated", createEvent);
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port: ", app.get("port"));
