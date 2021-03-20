@@ -12,7 +12,7 @@ app.get("/getAccount", getAccount);
 app.get("/", function(req, res){
     res.sendFile('views/pages/homePage.html', { root: __dirname});
 });
-app.get("/createEvent", createEvent, function(req, res){
+app.get("/createEvent", function(req, res){
     res.sendFile('views/pages/createEvent.html', { root: __dirname});
 });
 
