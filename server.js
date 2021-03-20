@@ -4,7 +4,9 @@ var app = express();
 const {Pool} = require("pg");
 
 const connectionString = process.env.DATABASE_URL || "postgres://planneruser:planneruser@localhost:5432/plannerplus";
-const pool = new Pool({connectionString: connectionString});
+const pool = new Pool({connectionString: connectionString, ssl: {
+    rejectUnauthorized: false
+  }});
 
 app.set("port", (process.env.PORT || 5000));
 
