@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>New Event</h1>
-    <form action="/eventSuccesfullyCreated" method="get">
+    <form action="/eventSuccesfullyCreated" method="post">
         <p>Event Title:</p>
         <input type="text" name="eventTitle"><br>
         <p>Event Date: </p>
@@ -25,7 +25,9 @@
         <input type="radio" id="public" name="privacyLevel" value="1">
         <label for="public">Public Event</label>
         <p>Event Details</p>
-        <textarea name="eventDetails"></textarea>
+        <textarea name="eventDetails"></textarea><br><br>
+
+        <input type="submit" value="Create">
     </form>
 </body>
 </html>
