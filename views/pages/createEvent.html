@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Event</title>
+</head>
+<body>
+    <h1>New Event</h1>
+    <form action="/eventSuccesfullyCreated" method="get">
+        <p>Event Title:</p><br>
+        <input type="text" name="eventTitle"><br><br>
+        <p>Event Date: </p>
+        <input type="date" name="eventDate"><br><br>
+        <p>Start Time: </p>
+        <input type="time" name="startTime"><br><br>
+        <p>End Time: </p>
+        <input type="time" name="endTime"><br><br>
+        <p>Meeting Location: </p>
+        <input type="text" name="meetingLocation"><br><br>
+        <p>Event Type (public/private): </p>
+        <input type="radio" id="private" name="privacyLevel" value="0">
+        <label for="private">Private Event</label>
+        <input type="radio" id="public" name="privacyLevel" value="1">
+        <label for="public">Public Event</label>
+        <p>Event Details</p>
+        <textarea name="eventDetails"></textarea>
+    </form>
+</body>
+</html>

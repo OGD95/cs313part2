@@ -11,11 +11,18 @@ app.set("port", (process.env.PORT || 5000));
 app.get("/getAccount", getAccount);
 app.get("/", function(req, res){
     res.sendFile('views/pages/homePage.html', { root: __dirname});
-})
+});
+app.get("/createEvent", createEvent, function(req, res){
+    res.sendFile('views/pages/createEvent.html', { root: __dirname});
+});
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port: ", app.get("port"));
 });
+
+function createEvent(){
+
+}
 
 function getAccount(req, res) {
     console.log("getting account information");
