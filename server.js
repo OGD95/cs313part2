@@ -22,6 +22,7 @@ app.listen(app.get("port"), function() {
 });
 
 function createEvent(req, res){
+    console.log("made it Here!");
     var accountId = 1;
     var eventTitle = req.query.eventTitle;
     var eventDateTime = req.query.eventDate + req.query.startTime;
