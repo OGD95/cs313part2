@@ -3,7 +3,8 @@ var app = express();
 
 const {Pool} = require("pg");
 
-const connectionString = process.env.DATABASE_URL || "postgres://planneruser:planneruser@localhost:5432/plannerplus";
+const connectionString = "postgres://sgybjffhywecne:2e69985bf18c128bae71829b5dc1ad654b762692e2ab412d32f2e5b4a7ebd389@ec2-54-145-102-149.compute-1.amazonaws.com:5432/d6enk2b2f07t4q";
+//process.env.DATABASE_URL || "postgres://planneruser:planneruser@localhost:5432/plannerplus";
 const pool = new Pool({connectionString: connectionString});
 
 app.set("port", (process.env.PORT || 5000));
