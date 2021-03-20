@@ -30,6 +30,8 @@ function createEvent(req, res){
     var eventPrivacy = req.query.privacyLevel.value;
     var eventDetails = req.query.eventDetails;
 
+    console.log(accountId, eventTitle, eventDateTime, eventEndTime);
+
     // var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
     // var params = [accountId, eventTitle, eventDateTime, 
     //               eventEndTime, meetingLocation, eventPrivacy, 
