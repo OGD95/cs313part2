@@ -9,6 +9,9 @@ const pool = new Pool({connectionString: connectionString, ssl: process.env.DATA
 app.set("port", (process.env.PORT || 5000));
 
 app.get("/getAccount", getAccount);
+app.get("/", function(req, res){
+    res.sendFile('views/pages/homePage.html', { root: __dirname});
+})
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port: ", app.get("port"));

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Planner+ the Daily Planner and Team Coordination App of the Future!!</h1>
+
+    <script>
+        function getAccount() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("accountInfo").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "getAccount?accountId=1", true);
+            xhttp.send();
+
+        }
+    </script>
+    <div id="accountInfo"></div>
+    <button onclick="getAccount()">View Account Info</button>
+</body>
+
+</html>
