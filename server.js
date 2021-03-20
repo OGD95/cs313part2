@@ -23,15 +23,15 @@ app.listen(app.get("port"), function() {
 
 function createEvent(req, res){
     console.log("made it Here!");
-    var accountId = 1;
-    var eventTitle = req.query.eventTitle;
-    var eventDateTime = req.query.eventDate + req.query.startTime;
-    var eventEndTime = req.query.endTime;
-    var meetingLocation = req.query.meetingLocation;
-    var eventPrivacy = req.query.privacyLevel.value;
-    var eventDetails = req.query.eventDetails;
+    // var accountId = 1;
+    // var eventTitle = req.query.eventTitle;
+    // var eventDateTime = req.query.eventDate + req.query.startTime;
+    // var eventEndTime = req.query.endTime;
+    // var meetingLocation = req.query.meetingLocation;
+    // var eventPrivacy = req.query.privacyLevel.value;
+    // var eventDetails = req.query.eventDetails;
 
-    console.log(accountId, eventTitle, eventDateTime, eventEndTime);
+    // console.log(accountId, eventTitle, eventDateTime, eventEndTime);
 
     // var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
     // var params = [accountId, eventTitle, eventDateTime, 
@@ -47,7 +47,7 @@ function createEvent(req, res){
     //     console.log("Found DB result: " + JSON.stringify(result.rows));
     //     callback(null, result.rows);
     // })
-    res.sendFile('views/pages/creationStatus.html', { root: __dirname});
+    //res.sendFile('views/pages/creationStatus.html', { root: __dirname});
 
 }
 
