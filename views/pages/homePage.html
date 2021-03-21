@@ -24,6 +24,12 @@
             xhttp.send();
 
         }
+
+        function createEvent() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/eventSuccesfullyCreated", true);
+            xhttp.send();
+        }
     </script>
     <div id="accountInfo"></div>
     <button onclick="getAccount()">View Account Info</button><br>

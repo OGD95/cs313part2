@@ -16,11 +16,6 @@ app.get("/createEvent", function (req, res) {
     res.sendFile('views/pages/createEvent.html', { root: __dirname });
 });
 app.get("/eventSuccesfullyCreated", createEvent);
-// function(req, res){
-//     console.log(req.query);
-//     res.sendFile('views/pages/creationStatus.html', { root: __dirname });
-//     //console.log("made it Here!", req);
-// }
 
 function createEvent(req, res) {
     console.log("made it Here!", req.query);
@@ -31,8 +26,6 @@ function createEvent(req, res) {
     var meetingLocation = req.query.meetingLocation;
     var eventPrivacy = Boolean(req.query.privacyLevel.value);
     var eventDetails = req.query.eventDetails;
-
-    // console.log(accountId, eventTitle, eventDateTime, eventEndTime);
 
     var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
     var params = [accountId, eventTitle, eventDateTime, 
