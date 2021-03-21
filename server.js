@@ -24,30 +24,27 @@ app.get("/eventSuccesfullyCreated", createEvent);
 
 function createEvent(req, res) {
     console.log("made it Here!", req.query);
-    // var accountId = 1;
-    // var eventTitle = req.query.eventTitle;
-    // var eventDateTime = req.query.eventDate + req.query.startTime;
-    // var eventEndTime = req.query.endTime;
-    // var meetingLocation = req.query.meetingLocation;
-    // var eventPrivacy = req.query.privacyLevel.value;
-    // var eventDetails = req.query.eventDetails;
+    var accountId = 1;
+    var eventTitle = req.query.eventTitle;
+    var eventDateTime = req.query.eventDate + " " + req.query.startTime;
+    var eventEndTime = req.query.endTime;
+    var meetingLocation = req.query.meetingLocation;
+    var eventPrivacy = req.query.privacyLevel.value;
+    var eventDetails = req.query.eventDetails;
 
     // console.log(accountId, eventTitle, eventDateTime, eventEndTime);
 
-    // var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
-    // var params = [accountId, eventTitle, eventDateTime, 
-    //               eventEndTime, meetingLocation, eventPrivacy, 
-    //               eventDetails];
-    // pool.query(sql, params, function(err, result){
-    //     if (err){
-    //         console.log("An error with the database occurred");
-    //         console.log(err);
-    //         callback(err, null);
-    //     }
-
-    //     console.log("Found DB result: " + JSON.stringify(result.rows));
-    //     callback(null, result.rows);
-    // })
+    var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
+    var params = [accountId, eventTitle, eventDateTime, 
+                  eventEndTime, meetingLocation, eventPrivacy, 
+                  eventDetails];
+    pool.query(sql, params, function(err, result){
+        if (err){
+            console.log("An error with the database occurred");
+            console.log(err);
+            callback(err, null);
+        }
+    });
     res.sendFile('views/pages/creationStatus.html', { root: __dirname});
 
 }
