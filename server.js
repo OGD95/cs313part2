@@ -15,18 +15,15 @@ app.get("/", function (req, res) {
 app.get("/createEvent", function (req, res) {
     res.sendFile('views/pages/createEvent.html', { root: __dirname });
 });
-app.get("/eventSuccesfullyCreated", function(req, res){
-    console.log(req.query);
-    res.sendFile('views/pages/creationStatus.html', { root: __dirname });
-    //console.log("made it Here!", req);
-});
-
-app.listen(app.get("port"), function () {
-    console.log("Now listening for connections on port: ", app.get("port"));
-});
+app.get("/eventSuccesfullyCreated", createEvent);
+// function(req, res){
+//     console.log(req.query);
+//     res.sendFile('views/pages/creationStatus.html', { root: __dirname });
+//     //console.log("made it Here!", req);
+// }
 
 function createEvent(req, res) {
-    console.log("made it Here!", req);
+    console.log("made it Here!", req.query);
     // var accountId = 1;
     // var eventTitle = req.query.eventTitle;
     // var eventDateTime = req.query.eventDate + req.query.startTime;
@@ -51,9 +48,13 @@ function createEvent(req, res) {
     //     console.log("Found DB result: " + JSON.stringify(result.rows));
     //     callback(null, result.rows);
     // })
-    //res.sendFile('views/pages/creationStatus.html', { root: __dirname});
+    res.sendFile('views/pages/creationStatus.html', { root: __dirname});
 
 }
+
+app.listen(app.get("port"), function () {
+    console.log("Now listening for connections on port: ", app.get("port"));
+});
 
 function getAccount(req, res) {
     console.log("getting account information");
