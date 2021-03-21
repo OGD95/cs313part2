@@ -29,7 +29,7 @@ function createEvent(req, res) {
     var eventDateTime = req.query.eventDate + " " + req.query.startTime;
     var eventEndTime = req.query.endTime;
     var meetingLocation = req.query.meetingLocation;
-    var eventPrivacy = req.query.privacyLevel.value;
+    var eventPrivacy = Boolean(req.query.privacyLevel.value);
     var eventDetails = req.query.eventDetails;
 
     // console.log(accountId, eventTitle, eventDateTime, eventEndTime);
