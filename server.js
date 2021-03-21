@@ -16,7 +16,7 @@ app.get("/createEvent", function (req, res) {
     res.sendFile('views/pages/createEvent.html', { root: __dirname });
 });
 app.post("/eventSuccesfullyCreated", function(req, res){
-    console.log(req);
+    res.json(req);
     res.sendFile('views/pages/creationStatus.html', { root: __dirname });
     //console.log("made it Here!", req);
 });
