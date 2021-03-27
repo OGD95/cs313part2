@@ -17,22 +17,22 @@ app.get("/createEvent", function (req, res) {
 });
 app.get("/eventSuccesfullyCreated", createEvent);
 
-app.get("/getUpcomingEvents", getEventsForAccount);
+// app.get("/getUpcomingEvents", getEventsForAccount);
 
-function getEventsForAccount(req, res) {
-    var accountId = req.query.accountId;
+// function getEventsForAccount(req, res) {
+//     var accountId = req.query.accountId;
 
-    var sql = "SELECT eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails FROM event WHERE accountId = $1::int"
-    var params = [accountId];
+//     var sql = "SELECT eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails FROM event WHERE accountId = $1::int"
+//     var params = [accountId];
 
-    pool.query(sql, params, function(err, result){
-        if (err){
-            console.log("An error with the database occurred");
-            console.log(err);
-            callback(err, null);
-        }
-    });
-}
+//     pool.query(sql, params, function(err, result){
+//         if (err){
+//             console.log("An error with the database occurred");
+//             console.log(err);
+//             callback(err, null);
+//         }
+//     });
+// }
 
 function createEvent(req, res) {
     var accountId = 1;
