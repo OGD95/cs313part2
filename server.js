@@ -30,8 +30,8 @@ function getFutureEventsFromDB(req, res) {
             console.log(err);
             callback(err, null);
         }
+        res.json(result.rows);
     });
-    res.json(result.rows);
 }
 
 function createEvent(req, res) {
