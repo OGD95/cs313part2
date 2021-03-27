@@ -25,6 +25,18 @@
 
         }
 
+        function getFutureEvents() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("futureEvents").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "getFutureEvents?accountId=1", true);
+            xhttp.send();
+        }
+
         function createAnEvent() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -38,9 +50,10 @@
         };
     </script>
 
-    
+    <div id="futureEvents"></div>
     <div id="pageInfo">
         <div id="accountInfo"></div>
+        <button onclick="getFutureEvents()">View Future Events</button>
         <button onclick="getAccount()">View Account Info</button><br>
         <button onclick="createAnEvent()">Create Event</button>
     </div>
