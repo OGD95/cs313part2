@@ -31,7 +31,6 @@ function getFutureEventsFromDB(req, res) {
             callback(err, null);
         } else{
             res.json(result.rows);
-            JSON.stringify(result.rows)
         }
         
     });
