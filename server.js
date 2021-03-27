@@ -29,8 +29,10 @@ function getFutureEventsFromDB(req, res) {
             console.log("An error with the database occurred");
             console.log(err);
             callback(err, null);
+        } else{
+            res.json(result.rows);
         }
-        res.json(result.rows);
+        
     });
 }
 
