@@ -24,7 +24,7 @@ function createEvent(req, res) {
     var eventDateTime = req.query.eventDate + " " + req.query.startTime;
     var eventEndTime = req.query.endTime;
     var meetingLocation = req.query.meetingLocation;
-    var eventPrivacy = req.query.privacyLevel.value;
+    var eventPrivacy = req.query.privacyLevel;
     var eventDetails = req.query.eventDetails;
 
     var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
