@@ -17,30 +17,14 @@ app.get("/createEvent", function (req, res) {
 });
 app.get("/eventSuccesfullyCreated", createEvent);
 
-// app.get("/getUpcomingEvents", getEventsForAccount);
-
-// function getEventsForAccount(req, res) {
-//     var accountId = req.query.accountId;
-
-//     var sql = "SELECT eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails FROM event WHERE accountId = $1::int"
-//     var params = [accountId];
-
-//     pool.query(sql, params, function(err, result){
-//         if (err){
-//             console.log("An error with the database occurred");
-//             console.log(err);
-//             callback(err, null);
-//         }
-//     });
-// }
-
 function createEvent(req, res) {
+    console.log("made it Here!", req.query);
     var accountId = 1;
     var eventTitle = req.query.eventTitle;
     var eventDateTime = req.query.eventDate + " " + req.query.startTime;
     var eventEndTime = req.query.endTime;
     var meetingLocation = req.query.meetingLocation;
-    var eventPrivacy = req.query.privacyLevel;
+    var eventPrivacy = req.query.privacyLevel.value;
     var eventDetails = req.query.eventDetails;
 
     var sql = "INSERT INTO event(accountId, eventTitle, eventDateTime, eventEndTime, meetingLocation, eventPrivacy, eventDetails) VALUES ($1, $2, $3, $4, $5, $6, $7)";
@@ -55,7 +39,12 @@ function createEvent(req, res) {
         }
     });
     res.sendFile('views/pages/creationStatus.html', { root: __dirname});
+
 }
+
+app.listen(app.get("port"), function () {
+    console.log("Now listening for connections on port: ", app.get("port"));
+});
 
 function getAccount(req, res) {
     console.log("getting account information");
